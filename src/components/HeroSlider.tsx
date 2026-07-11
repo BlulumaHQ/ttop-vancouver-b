@@ -30,7 +30,7 @@ const slides: Slide[] = [
     secondaryCta: { label: "View Our Menu", to: "/menu" },
   },
   {
-    image: "/images/ttop/dishes/hero-fried-chicken-bento.webp",
+    image: "/images/ttop/hero/hero-fried-chicken-bento.webp",
     eyebrow: "Limited Time · Featured This Season",
     title: (
       <>
