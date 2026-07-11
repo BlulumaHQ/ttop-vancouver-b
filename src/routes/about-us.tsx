@@ -70,18 +70,18 @@ function Page() {
 
         <ol className="mt-16 space-y-8">
           {sections.map((s, i) => (
-            <>
+            <div key={s.title}>
               {i === 2 && (
-                <li key="ribbon" aria-hidden="true" className="flex justify-center py-4">
+                <div aria-hidden="true" className="mb-8 flex justify-center py-4">
                   <SteamRibbon className="h-6 w-56 opacity-70" />
-                </li>
+                </div>
               )}
-              <li key={s.title} className="rounded-md border-l-4 border-[color:var(--color-brand-red)] bg-white p-6 md:p-8">
+              <li className="rounded-md border-l-4 border-[color:var(--color-brand-red)] bg-white p-6 md:p-8">
                 <span className="font-mono text-xs font-bold text-[color:var(--color-brand-red)]">{s.eyebrow}</span>
                 <h2 className="mt-1 font-serif text-2xl text-[color:var(--color-brand-navy)]">{s.title}</h2>
                 <p className="mt-3 text-[color:var(--color-brand-text-2)]">{s.body}</p>
               </li>
-            </>
+            </div>
           ))}
         </ol>
       </section>

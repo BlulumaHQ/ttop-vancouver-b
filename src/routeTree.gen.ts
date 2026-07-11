@@ -9,38 +9,277 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as SchoolProgramsRouteImport } from './routes/school-programs'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FrozenFoodsRouteImport } from './routes/frozen-foods'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CateringRouteImport } from './routes/catering'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SchoolProgramsIndexRouteImport } from './routes/school-programs.index'
+import { Route as SchoolProgramsMontessoriDaycareRouteImport } from './routes/school-programs.montessori-daycare'
+import { Route as SchoolProgramsHotLunchRouteImport } from './routes/school-programs.hot-lunch'
 
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolProgramsRoute = SchoolProgramsRouteImport.update({
+  id: '/school-programs',
+  path: '/school-programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrozenFoodsRoute = FrozenFoodsRouteImport.update({
+  id: '/frozen-foods',
+  path: '/frozen-foods',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CateringRoute = CateringRouteImport.update({
+  id: '/catering',
+  path: '/catering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SchoolProgramsIndexRoute = SchoolProgramsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SchoolProgramsRoute,
+} as any)
+const SchoolProgramsMontessoriDaycareRoute =
+  SchoolProgramsMontessoriDaycareRouteImport.update({
+    id: '/montessori-daycare',
+    path: '/montessori-daycare',
+    getParentRoute: () => SchoolProgramsRoute,
+  } as any)
+const SchoolProgramsHotLunchRoute = SchoolProgramsHotLunchRouteImport.update({
+  id: '/hot-lunch',
+  path: '/hot-lunch',
+  getParentRoute: () => SchoolProgramsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/frozen-foods': typeof FrozenFoodsRoute
+  '/gallery': typeof GalleryRoute
+  '/menu': typeof MenuRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/school-programs': typeof SchoolProgramsRouteWithChildren
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/school-programs/hot-lunch': typeof SchoolProgramsHotLunchRoute
+  '/school-programs/montessori-daycare': typeof SchoolProgramsMontessoriDaycareRoute
+  '/school-programs/': typeof SchoolProgramsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/frozen-foods': typeof FrozenFoodsRoute
+  '/gallery': typeof GalleryRoute
+  '/menu': typeof MenuRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/school-programs/hot-lunch': typeof SchoolProgramsHotLunchRoute
+  '/school-programs/montessori-daycare': typeof SchoolProgramsMontessoriDaycareRoute
+  '/school-programs': typeof SchoolProgramsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/frozen-foods': typeof FrozenFoodsRoute
+  '/gallery': typeof GalleryRoute
+  '/menu': typeof MenuRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/school-programs': typeof SchoolProgramsRouteWithChildren
+  '/terms-of-service': typeof TermsOfServiceRoute
+  '/school-programs/hot-lunch': typeof SchoolProgramsHotLunchRoute
+  '/school-programs/montessori-daycare': typeof SchoolProgramsMontessoriDaycareRoute
+  '/school-programs/': typeof SchoolProgramsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/catering'
+    | '/contact'
+    | '/faq'
+    | '/frozen-foods'
+    | '/gallery'
+    | '/menu'
+    | '/privacy-policy'
+    | '/school-programs'
+    | '/terms-of-service'
+    | '/school-programs/hot-lunch'
+    | '/school-programs/montessori-daycare'
+    | '/school-programs/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/catering'
+    | '/contact'
+    | '/faq'
+    | '/frozen-foods'
+    | '/gallery'
+    | '/menu'
+    | '/privacy-policy'
+    | '/terms-of-service'
+    | '/school-programs/hot-lunch'
+    | '/school-programs/montessori-daycare'
+    | '/school-programs'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/catering'
+    | '/contact'
+    | '/faq'
+    | '/frozen-foods'
+    | '/gallery'
+    | '/menu'
+    | '/privacy-policy'
+    | '/school-programs'
+    | '/terms-of-service'
+    | '/school-programs/hot-lunch'
+    | '/school-programs/montessori-daycare'
+    | '/school-programs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  CateringRoute: typeof CateringRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  FrozenFoodsRoute: typeof FrozenFoodsRoute
+  GalleryRoute: typeof GalleryRoute
+  MenuRoute: typeof MenuRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  SchoolProgramsRoute: typeof SchoolProgramsRouteWithChildren
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-programs': {
+      id: '/school-programs'
+      path: '/school-programs'
+      fullPath: '/school-programs'
+      preLoaderRoute: typeof SchoolProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/frozen-foods': {
+      id: '/frozen-foods'
+      path: '/frozen-foods'
+      fullPath: '/frozen-foods'
+      preLoaderRoute: typeof FrozenFoodsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catering': {
+      id: '/catering'
+      path: '/catering'
+      fullPath: '/catering'
+      preLoaderRoute: typeof CateringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +287,58 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/school-programs/': {
+      id: '/school-programs/'
+      path: '/'
+      fullPath: '/school-programs/'
+      preLoaderRoute: typeof SchoolProgramsIndexRouteImport
+      parentRoute: typeof SchoolProgramsRoute
+    }
+    '/school-programs/montessori-daycare': {
+      id: '/school-programs/montessori-daycare'
+      path: '/montessori-daycare'
+      fullPath: '/school-programs/montessori-daycare'
+      preLoaderRoute: typeof SchoolProgramsMontessoriDaycareRouteImport
+      parentRoute: typeof SchoolProgramsRoute
+    }
+    '/school-programs/hot-lunch': {
+      id: '/school-programs/hot-lunch'
+      path: '/hot-lunch'
+      fullPath: '/school-programs/hot-lunch'
+      preLoaderRoute: typeof SchoolProgramsHotLunchRouteImport
+      parentRoute: typeof SchoolProgramsRoute
+    }
   }
 }
 
+interface SchoolProgramsRouteChildren {
+  SchoolProgramsHotLunchRoute: typeof SchoolProgramsHotLunchRoute
+  SchoolProgramsMontessoriDaycareRoute: typeof SchoolProgramsMontessoriDaycareRoute
+  SchoolProgramsIndexRoute: typeof SchoolProgramsIndexRoute
+}
+
+const SchoolProgramsRouteChildren: SchoolProgramsRouteChildren = {
+  SchoolProgramsHotLunchRoute: SchoolProgramsHotLunchRoute,
+  SchoolProgramsMontessoriDaycareRoute: SchoolProgramsMontessoriDaycareRoute,
+  SchoolProgramsIndexRoute: SchoolProgramsIndexRoute,
+}
+
+const SchoolProgramsRouteWithChildren = SchoolProgramsRoute._addFileChildren(
+  SchoolProgramsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  CateringRoute: CateringRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  FrozenFoodsRoute: FrozenFoodsRoute,
+  GalleryRoute: GalleryRoute,
+  MenuRoute: MenuRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  SchoolProgramsRoute: SchoolProgramsRouteWithChildren,
+  TermsOfServiceRoute: TermsOfServiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
