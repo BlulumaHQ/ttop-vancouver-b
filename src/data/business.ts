@@ -35,6 +35,23 @@ export const business = {
       "https://www.google.com/maps/search/?api=1&query=223-13986+Cambie+Road+Richmond+BC+V6V+2K3",
   },
   canonicalOrigin: "https://ttopchicken.ca",
+  delivery: [
+    {
+      name: "DoorDash",
+      url: "https://www.doordash.com/",
+      logo: "/images/ttop/delivery/doordash.png",
+    },
+    {
+      name: "Uber Eats",
+      url: "https://www.ubereats.com/",
+      logo: "/images/ttop/delivery/ubereats.png",
+    },
+    {
+      name: "Fantuan",
+      url: "https://www.fantuan.ca/",
+      logo: "/images/ttop/delivery/fantuan.jpg",
+    },
+  ],
 } as const;
 
 export const siteNav = {
