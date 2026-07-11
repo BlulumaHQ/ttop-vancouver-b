@@ -57,46 +57,40 @@ function Page() {
           ))}
         </div>
 
-        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {list.map((p) => (
-            <li key={p.code + p.name} className="flex flex-col rounded-md border border-[color:var(--color-brand-border)] bg-white">
-              <div className="aspect-[4/3] overflow-hidden bg-[color:var(--color-brand-cream)]">
-                <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-contain p-4" />
+            <li
+              key={p.code + p.name}
+              className="group flex flex-col overflow-hidden rounded-md border border-[color:var(--color-brand-border)] bg-white transition hover:border-[color:var(--color-brand-blue)]"
+            >
+              <div className="relative aspect-square w-full overflow-hidden bg-[color:var(--color-brand-cream)]">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                />
+                <span className="absolute left-2 top-2 rounded-sm bg-[color:var(--color-brand-navy)]/90 px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">
+                  {p.code}
+                </span>
+                <span className="absolute right-2 top-2 rounded-sm bg-[color:var(--color-brand-red)] px-2 py-0.5 font-mono text-[11px] font-bold text-white">
+                  {p.price}
+                </span>
               </div>
-              <div className="flex flex-1 flex-col border-t border-[color:var(--color-brand-border)] p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <span className="text-xs font-bold text-[color:var(--color-brand-red)]">{p.code}</span>
-                    <h3 className="mt-1 font-serif text-lg leading-tight text-[color:var(--color-brand-navy)]">{p.name}</h3>
-                  </div>
-                  <span className="shrink-0 font-mono text-sm font-semibold text-[color:var(--color-brand-navy)]">{p.price}</span>
-                </div>
-                <p className="mt-1 text-xs uppercase tracking-wider text-[color:var(--color-brand-text-2)]">
-                  {p.category}
-                </p>
+              <div className="flex flex-1 flex-col gap-1.5 p-3">
+                <h3 className="font-sans text-sm font-semibold leading-tight text-[color:var(--color-brand-navy)]">
+                  {p.name}
+                </h3>
                 {p.details && (
-                  <p className="mt-3 flex-1 text-sm text-[color:var(--color-brand-text-2)]">{p.details}</p>
+                  <p className="line-clamp-2 text-[11px] leading-snug text-[color:var(--color-brand-text-2)]">
+                    {p.details}
+                  </p>
                 )}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href={business.orderUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-md border border-[color:var(--color-brand-blue)] px-3 py-1.5 text-xs font-semibold text-[color:var(--color-brand-blue)] hover:bg-[color:var(--color-brand-soft-blue)]"
-                  >
-                    <ExternalLink className="h-3.5 w-3.5" /> Check Availability
-                  </a>
-                  <a
-                    href={business.phoneHref}
-                    className="inline-flex items-center gap-1.5 rounded-md bg-[color:var(--color-brand-red)] px-3 py-1.5 text-xs font-semibold text-white"
-                  >
-                    <Phone className="h-3.5 w-3.5" /> Call to Pre-Order
-                  </a>
-                </div>
               </div>
             </li>
           ))}
         </ul>
+
 
         <div className="mt-14 rounded-md bg-[color:var(--color-brand-navy)] p-8 text-white md:p-12">
           <h2 className="font-serif text-2xl text-white md:text-3xl">Ask About a Large Order</h2>

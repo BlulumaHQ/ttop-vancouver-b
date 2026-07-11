@@ -1,10 +1,12 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MobileOrderBar } from "./MobileOrderBar";
+import { TopBar } from "./TopBar";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-[color:var(--color-brand-cream)]">
+      <TopBar />
       <Header />
       <main id="main" className="flex-1 pb-24 lg:pb-0">
         {children}

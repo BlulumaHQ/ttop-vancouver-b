@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ChevronDown, Phone, MapPin } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { business, siteNav } from "@/data/business";
 import { OrderOnlineButton } from "./Buttons";
 
@@ -10,23 +10,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[color:var(--color-brand-border)] bg-white/95 backdrop-blur">
-      {/* Utility bar */}
-      <div className="hidden border-b border-[color:var(--color-brand-border)] bg-[color:var(--color-brand-cream)] text-xs text-[color:var(--color-brand-text-2)] md:block">
-        <div className="container-page flex h-9 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-3.5 w-3.5 text-[color:var(--color-brand-blue)]" />
-            <span>{business.address.display}</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href={business.phoneHref} className="flex items-center gap-1.5 hover:text-[color:var(--color-brand-blue)]">
-              <Phone className="h-3.5 w-3.5" />
-              {business.phone}
-            </a>
-            <span aria-hidden="true">·</span>
-            <span>{business.hours.display}</span>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main bar */}
       <div className="container-page flex h-[76px] items-center justify-between gap-4">
