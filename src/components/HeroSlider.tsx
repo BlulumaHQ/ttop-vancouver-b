@@ -15,7 +15,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    image: "/images/ttop/dishes/ttop-chicken-pot-large.webp",
+    image: "/images/ttop/dishes/hero-chicken-pot-spread.webp",
     eyebrow: "Taiwan Taipei Original Pot · Richmond, BC",
     title: (
       <>
@@ -30,7 +30,7 @@ const slides: Slide[] = [
     secondaryCta: { label: "View Our Menu", to: "/menu" },
   },
   {
-    image: "/images/ttop/dishes/hibachi-beef-bento.webp",
+    image: "/images/ttop/dishes/hero-fried-chicken-bento.webp",
     eyebrow: "Limited Time · Featured This Season",
     title: (
       <>
