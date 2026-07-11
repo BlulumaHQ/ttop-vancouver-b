@@ -147,9 +147,9 @@ export const menuCategories: MenuCategory[] = [
       "Our famous Hua Diao chicken pot. Celery, green pepper, scallion, and cilantro are included.",
     items: [
       { code: "A1", name: "TTOP Chicken Pot (Small)", price: "$38.00", image: `${IMG}/ttop-chicken-pot-small.webp` },
-      { code: "A2", name: "TTOP Chicken Pot (Large)", price: "$58.00", image: `${IMG}/chicken-pot-flame.webp` },
-      { code: "A3", name: "TTOP Chicken Pot with Spicy XM Sauce (Small)", price: "$40.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-spoon.webp` },
-      { code: "A4", name: "TTOP Chicken Pot with Spicy XM Sauce (Large)", price: "$60.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-flame.webp` },
+      { code: "A2", name: "TTOP Chicken Pot (Large)", price: "$58.00", image: `${IMG}/ttop-chicken-pot-large.webp` },
+      { code: "A3", name: "TTOP Chicken Pot with Spicy XM Sauce (Small)", price: "$40.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-spicy-small.webp` },
+      { code: "A4", name: "TTOP Chicken Pot with Spicy XM Sauce (Large)", price: "$60.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-spicy-large.webp` },
     ],
     options: [
       {
