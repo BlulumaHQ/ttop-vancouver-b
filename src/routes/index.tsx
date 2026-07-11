@@ -9,6 +9,7 @@ import { business } from "@/data/business";
 import { featuredDishes } from "@/data/menu";
 import { customerReviews } from "@/data/reviews";
 import { galleryImages } from "@/data/gallery";
+import ttopSignature from "@/assets/ttop-signature-chicken-pot.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const heroImage = "/images/ttop/dishes/ttop-chicken-pot-large.webp";
+const heroImage = ttopSignature.url;
 
 function Home() {
   return (
