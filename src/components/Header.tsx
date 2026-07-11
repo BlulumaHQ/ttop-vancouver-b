@@ -55,7 +55,7 @@ export function Header() {
                 to={item.to}
                 className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold text-[color:var(--color-brand-navy)] hover:bg-[color:var(--color-brand-soft-blue)]"
                 activeProps={{ className: "text-[color:var(--color-brand-red)]" }}
-                activeOptions={{ exact: item.to === "/" }}
+                
               >
                 {item.label}
                 {item.children && <ChevronDown className="h-3.5 w-3.5 opacity-70" />}
