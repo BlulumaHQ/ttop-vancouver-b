@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Instagram, Facebook, Star, Phone, MapPin, Navigation } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { OrderOnlineButton, InternalButton } from "@/components/Buttons";
 import { SteamRibbon } from "@/components/SteamRibbon";
+import { HeroSlider } from "@/components/HeroSlider";
+import { DeliveryStrip } from "@/components/DeliveryStrip";
 import { business } from "@/data/business";
 import { featuredDishes } from "@/data/menu";
 import { customerReviews } from "@/data/reviews";
@@ -27,48 +29,14 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const heroImage =
-  "https://ttopchicken.ca/wp-content/uploads/2024/01/245A9808-%E5%B7%B2%E5%A2%9E%E5%BC%B7-%E9%9B%9C%E8%A8%8A%E6%B8%9B%E5%B0%91-%E7%B7%A8%E8%BC%AF-scaled.jpg";
+const heroImage = "/images/ttop/dishes/ttop-chicken-pot-large.webp";
 
 function Home() {
   return (
     <SiteLayout>
-      {/* HERO */}
-      <section className="border-b border-[color:var(--color-brand-border)] bg-[color:var(--color-brand-cream)]">
-        <div className="container-page grid gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-6">
-            <p className="eyebrow">Taiwanese Comfort Food in Richmond, BC</p>
-            <h1 className="mt-4 font-serif text-4xl leading-[1.05] text-[color:var(--color-brand-navy)] md:text-6xl">
-              A Taste of Taiwan,
-              <br />
-              <span className="text-[color:var(--color-brand-red)]">From Our Family Table</span> to Yours.
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-[color:var(--color-brand-text-2)] md:text-lg">
-              Discover signature Hua Diao chicken pots, comforting Taiwanese bentos, frozen favourites, catering, and thoughtfully organized school meal programs from a family-run Richmond restaurant founded in 2014.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <OrderOnlineButton size="lg" />
-              <InternalButton to="/menu" variant="secondary" size="lg">
-                View Our Menu <ArrowRight className="h-4 w-4" />
-              </InternalButton>
-            </div>
-            <SteamRibbon className="mt-10 h-6 w-56 opacity-70" />
-          </div>
-          <div className="lg:col-span-6">
-            <div className="relative">
-              <div className="absolute -inset-3 -z-10 rounded-md border-2 border-[color:var(--color-brand-red)]/30" />
-              <div className="absolute -bottom-4 -right-4 -z-10 h-28 w-28 rounded-full bg-[color:var(--color-brand-blue)]/10" />
-              <img
-                src={heroImage}
-                alt="Signature TTOP Chicken Pot served in a clay pot with Hua Diao sauce"
-                width={1200}
-                height={900}
-                className="aspect-[4/3] w-full rounded-md object-cover shadow-md"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
+      <DeliveryStrip variant="light" />
+
 
       {/* FOUR VISITOR PATHS */}
       <section className="border-b border-[color:var(--color-brand-border)] bg-white py-16 md:py-24">
