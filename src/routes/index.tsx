@@ -9,7 +9,6 @@ import { business } from "@/data/business";
 import { featuredDishes } from "@/data/menu";
 import { customerReviews } from "@/data/reviews";
 import { galleryImages } from "@/data/gallery";
-import ttopThreeFlavors from "@/assets/ttop-3-flavors.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,7 +29,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const heroImage = ttopThreeFlavors.url;
+const heroImage = "/images/ttop-3-flavors.png";
 
 function Home() {
   return (
