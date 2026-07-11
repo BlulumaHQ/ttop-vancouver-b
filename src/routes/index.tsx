@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, Instagram, Facebook, Phone, MapPin, Navigation } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { OrderOnlineButton, InternalButton } from "@/components/Buttons";
 import { SteamRibbon } from "@/components/SteamRibbon";
