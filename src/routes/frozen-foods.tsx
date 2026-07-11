@@ -70,10 +70,10 @@ function Page() {
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
                 />
-                <span className="absolute left-2 top-2 rounded-sm bg-[color:var(--color-brand-navy)]/90 px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">
+                <span className="absolute left-2 top-2 rounded-md bg-[color:var(--color-brand-blue)] px-2 py-1 font-mono text-sm font-bold leading-none text-white shadow-sm">
                   {p.code}
                 </span>
-                <span className="absolute right-2 top-2 rounded-sm bg-[color:var(--color-brand-red)] px-2 py-0.5 font-mono text-[11px] font-bold text-white">
+                <span className="absolute right-2 top-2 rounded-md bg-[color:var(--color-brand-red)] px-2 py-1 font-mono text-sm font-bold leading-none text-white shadow-sm">
                   {p.price}
                 </span>
               </div>

@@ -35,7 +35,7 @@ function TagBadge({ t }: { t: string }) {
     t === "Vegetarian"
       ? "bg-emerald-100 text-emerald-800"
       : t === "Spicy"
-        ? "bg-red-100 text-red-800"
+        ? "bg-[color:var(--color-brand-soft-red)] text-[color:var(--color-brand-red)]"
         : "bg-amber-100 text-amber-800";
   return (
     <span
@@ -66,7 +66,7 @@ function DishCard({ item }: { item: MenuItem }) {
           </div>
         )}
         {item.code && (
-          <span className="absolute left-2 top-2 rounded-sm bg-[color:var(--color-brand-navy)]/90 px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">
+          <span className="absolute left-2 top-2 rounded-md bg-[color:var(--color-brand-blue)] px-2 py-1 font-mono text-sm font-bold leading-none text-white shadow-sm">
             {item.code}
           </span>
         )}
