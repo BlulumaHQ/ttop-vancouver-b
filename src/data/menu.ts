@@ -147,9 +147,9 @@ export const menuCategories: MenuCategory[] = [
       "Our famous Hua Diao chicken pot. Celery, green pepper, scallion, and cilantro are included.",
     items: [
       { code: "A1", name: "TTOP Chicken Pot (Small)", price: "$38.00", image: `${IMG}/ttop-chicken-pot-small.webp` },
-      { code: "A2", name: "TTOP Chicken Pot (Large)", price: "$58.00", image: `${IMG}/ttop-chicken-pot-large.webp` },
-      { code: "A3", name: "TTOP Chicken Pot with Spicy XM Sauce (Small)", price: "$40.00", tags: ["Spicy"], image: `${IMG}/ttop-chicken-pot-small.webp` },
-      { code: "A4", name: "TTOP Chicken Pot with Spicy XM Sauce (Large)", price: "$60.00", tags: ["Spicy"], image: `${IMG}/ttop-chicken-pot-large.webp` },
+      { code: "A2", name: "TTOP Chicken Pot (Large)", price: "$58.00", image: `${IMG}/chicken-pot-flame.webp` },
+      { code: "A3", name: "TTOP Chicken Pot with Spicy XM Sauce (Small)", price: "$40.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-spoon.webp` },
+      { code: "A4", name: "TTOP Chicken Pot with Spicy XM Sauce (Large)", price: "$60.00", tags: ["Spicy"], image: `${IMG}/chicken-pot-flame.webp` },
     ],
     options: [
       {
@@ -177,7 +177,7 @@ export const menuCategories: MenuCategory[] = [
       { code: "B1", name: "TTOP Chicken Bento", price: "$18.50", image: `${IMG}/ttop-chicken-bento.webp` },
       { code: "B2", name: "TTOP Spicy Chicken Bento", price: "$19.50", tags: ["Spicy"], image: `${IMG}/ttop-spicy-chicken-bento.webp` },
       { code: "B3", name: "DF Pork Chop Bento", price: "$17.00", image: `${IMG}/df-pork-chop-bento.webp` },
-      { code: "B4", name: "DF Chicken Leg Bento", price: "$18.50", image: `${IMG}/df-chicken-leg-bento.webp` },
+      { code: "B4", name: "DF Chicken Leg Bento", price: "$18.50", image: `${IMG}/hero-fried-chicken-bento.webp` },
       { code: "B5", name: "DF Chicken Nugget Bento", price: "$16.50", image: `${IMG}/df-chicken-nugget-bento.webp` },
       { code: "B6", name: "DF Red Yeast Pork Belly Bento", price: "$17.00", image: `${IMG}/df-red-yeast-pork-belly-bento.webp` },
       { code: "B7", name: "OG Stewed Pork Belly Bento", price: "$16.50", image: `${IMG}/og-stewed-pork-belly-bento.webp` },
@@ -226,7 +226,7 @@ export const menuCategories: MenuCategory[] = [
     id: "rice-bowls",
     title: "Rice Bowls",
     items: [
-      { code: "C1", name: "LOBA Rice", price: "$11.00", image: `${IMG}/loba-rice.webp` },
+      { code: "C1", name: "LOBA Rice", price: "$11.00", image: `${IMG}/loba-rice-closeup.webp` },
       { code: "C2", name: "Shredded Chicken Rice", price: "$12.50", image: `${IMG}/shredded-chicken-rice.webp` },
       { code: "C3", name: "Sausage Chicken Rice", price: "$16.50", image: `${IMG}/sausage-chicken-rice.webp` },
       { code: "C4", name: "Chicken LOBA Rice", price: "$14.50", image: `${IMG}/chicken-loba-rice.webp` },
