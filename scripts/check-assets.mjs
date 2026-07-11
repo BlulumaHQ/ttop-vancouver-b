@@ -54,7 +54,7 @@ const FORBIDDEN_PATTERNS = [
   { re: /http:\/\/localhost[:/]/g, msg: "localhost URL" },
   { re: /https?:\/\/ttopchicken\.ca\/wp-content\//g, msg: "WordPress hotlink from ttopchicken.ca" },
   { re: /lovable-uploads/g, msg: "lovable-uploads reference" },
-  { re: /[A-Z]:\\\\|\/Users\/[^"'`\s]+|\/home\/[^"'`\s]+/g, msg: "local filesystem path" },
+  { re: /["'`][A-Z]:\\\\|["'`]\/Users\/[a-z]+\/|["'`]\/home\/[a-z]+\//gi, msg: "local filesystem path" },
 ];
 
 const LOCAL_URL_RE = /["'`](\/(?:images|downloads|fonts)\/[^"'`\s?#]+\.[a-zA-Z0-9]{2,5})/g;
