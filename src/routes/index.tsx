@@ -82,7 +82,7 @@ function Home() {
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <PathCard
-              image="/images/ttop/brand/ttop-banner-1.png"
+              image="https://ttopchicken.ca/wp-content/uploads/2023/11/245A9159-%E5%B7%B2%E5%A2%9E%E5%BC%B7-%E9%9B%9C%E8%A8%8A%E6%B8%9B%E5%B0%91-scaled.jpg"
               eyebrow="01 · Dine In or Take Out"
               title="Restaurant Menu"
               body="Explore signature chicken pots, Taiwanese bentos, rice bowls, street food, drinks, and ChuChu Bar favourites."
@@ -91,7 +91,7 @@ function Home() {
               tone="cream"
             />
             <PathCard
-              image="/images/ttop/frozen/frozen-cooked-foods-01.jpg"
+              image="/images/ttop/brand/ttop-banner-2.png"
               eyebrow="02 · For Schools & Centres"
               title="School Meal Programs"
               body="Discover organized meal solutions for Montessori centres, daycares, and elementary school hot lunch programs."
@@ -100,7 +100,7 @@ function Home() {
               tone="navy"
             />
             <PathCard
-              image="/images/ttop/menu/menu-red-1.jpg"
+              image="https://ttopchicken.ca/wp-content/uploads/2023/11/245A8999-%E5%B7%B2%E5%A2%9E%E5%BC%B7-%E9%9B%9C%E8%A8%8A%E6%B8%9B%E5%B0%91-scaled.jpg"
               eyebrow="03 · Groups & Events"
               title="Catering"
               body="Planning a group meal or event? Tell us what you need and TTOP will confirm available dishes, quantities, pickup or delivery details, and pricing."
@@ -109,7 +109,7 @@ function Home() {
               tone="cream"
             />
             <PathCard
-              image="/images/ttop/frozen/frozen-cooked-foods-02.jpg"
+              image="/images/ttop/frozen/frozen-cooked-foods-01.jpg"
               eyebrow="04 · Home Kitchen"
               title="Frozen Foods"
               body="Bring TTOP favourites home with prepared dishes, sauces, noodles, marinated products, and frozen meal options."
@@ -117,6 +117,7 @@ function Home() {
               to="/frozen-foods"
               tone="red"
             />
+
           </div>
         </div>
       </section>
