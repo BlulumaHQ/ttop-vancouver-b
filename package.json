@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "clean": "node scripts/clean-build.mjs",
+    "build": "bun run clean && vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "check:assets": "node scripts/check-assets.mjs"
+    "check:assets": "node scripts/check-assets.mjs",
+    "check:redirects": "node scripts/check-redirects.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
