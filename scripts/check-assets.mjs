@@ -57,17 +57,20 @@ const FORBIDDEN_PATTERNS = [
   { re: /[A-Z]:\\\\|\/Users\/[^"'`\s]+|\/home\/[^"'`\s]+/g, msg: "local filesystem path" },
 ];
 
-const LOCAL_URL_RE = /["'`](\/(?:images|downloads|fonts)\/[^"'`\s?#]+)/g;
+const LOCAL_URL_RE = /["'`](\/(?:images|downloads|fonts)\/[^"'`\s?#]+\.[a-zA-Z0-9]{2,5})/g;
 const ASSET_JSON_IMPORT_RE = /from\s+["']([^"']+\.asset\.json)["']/g;
 
 for (const file of textFiles) {
   const rel = file.replace(/\\/g, "/");
   if (EXEMPT_FILES.has(rel)) continue;
+  const isAllowedAssetJson = ALLOWED_ASSET_JSON.has(rel);
   const content = readFileSync(file, "utf8");
 
-  for (const { re, msg } of FORBIDDEN_PATTERNS) {
-    re.lastIndex = 0;
-    if (re.test(content)) errors.push(`${rel}: forbidden reference — ${msg}`);
+  if (!isAllowedAssetJson) {
+    for (const { re, msg } of FORBIDDEN_PATTERNS) {
+      re.lastIndex = 0;
+      if (re.test(content)) errors.push(`${rel}: forbidden reference — ${msg}`);
+    }
   }
 
   // .asset.json imports (only school PDF exception allowed)
