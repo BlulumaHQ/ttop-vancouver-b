@@ -32,6 +32,23 @@ function Page() {
         intro="Bring TTOP’s Taiwanese comfort food to your next organized meal, gathering, or event. Tell us about your requirements and TTOP will confirm available dishes, quantities, timing, pickup or delivery options, and pricing."
       />
       <section className="container-page py-16">
+        {/* Photo showcase */}
+        <div className="mb-12 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+          {[
+            { src: "/images/ttop/dishes/hero-chicken-pot-spread.webp", label: "Signature Chicken Pot" },
+            { src: "/images/ttop/dishes/hero-fried-chicken-bento.webp", label: "Bento Sets" },
+            { src: "/images/ttop/dishes/chicken-leg-buy-8-get-2.webp", label: "Group Fried Chicken" },
+            { src: "/images/ttop/dishes/loba-rice-closeup.webp", label: "LOBA Rice" },
+          ].map((p) => (
+            <figure key={p.src} className="relative overflow-hidden rounded-md">
+              <img src={p.src} alt={p.label} loading="lazy" className="aspect-square w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-xs font-semibold text-white">
+                {p.label}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
         <ul className="grid gap-4 md:grid-cols-2">
           {inquiryCategories.map((c) => (
             <li key={c.title} className="rounded-md border border-[color:var(--color-brand-border)] bg-white p-6">

@@ -47,16 +47,46 @@ function SchoolProgramsOverview() {
         <div className="grid gap-6 lg:grid-cols-2">
           <ProgramPanel
             title="Daily Montessori & Daycare Meals"
+            image="/images/ttop/dishes/basic-bento.webp"
             body="Daily meal service designed to extend the prepared classroom environment to the lunch table through age-appropriate portions, bite-sized presentation, rotating textures and flavours, and a delivery process intended to minimize disruption."
             cta="Explore Montessori & Daycare Meals"
             to="/school-programs/montessori-daycare"
           />
           <ProgramPanel
             title="School Hot Lunch Program"
+            image="/images/ttop/dishes/hero-fried-chicken-bento.webp"
             body="An organized hot lunch model using class-by-class sorting, clearly labelled meals, insulated transport, and coordinated delivery planning to make distribution easier for school staff."
             cta="Explore School Hot Lunch"
             to="/school-programs/hot-lunch"
           />
+        </div>
+
+        {/* Sample meal photos */}
+        <div className="mt-14">
+          <p className="eyebrow">Sample meals</p>
+          <h2 className="mt-2 font-serif text-2xl text-[color:var(--color-brand-navy)] md:text-3xl">
+            A Taste of What Students Eat
+          </h2>
+          <div className="mt-6 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+            {[
+              "/images/ttop/dishes/ttop-chicken-bento.webp",
+              "/images/ttop/dishes/df-pork-chop-bento.webp",
+              "/images/ttop/dishes/braised-pork-chop-bento.webp",
+              "/images/ttop/dishes/grilled-pork-bento.webp",
+              "/images/ttop/dishes/red-yeast-pork-bento-plate.webp",
+              "/images/ttop/dishes/basil-eggplant-bento-plate.webp",
+              "/images/ttop/dishes/vegetarian-chicken-roll-bento-plate.webp",
+              "/images/ttop/dishes/shredded-chicken-bento-plate.webp",
+            ].map((src) => (
+              <img
+                key={src}
+                src={src}
+                alt="Sample school meal bento"
+                loading="lazy"
+                className="aspect-square w-full rounded-md object-cover"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -127,18 +157,23 @@ function SchoolProgramsOverview() {
 }
 
 function ProgramPanel({
-  title, body, cta, to,
-}: { title: string; body: string; cta: string; to: string }) {
+  title, body, cta, to, image,
+}: { title: string; body: string; cta: string; to: string; image?: string }) {
   return (
-    <article className="rounded-md border border-[color:var(--color-brand-border)] bg-white p-8">
-      <h3 className="font-serif text-2xl text-[color:var(--color-brand-navy)]">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-brand-text-2)]">{body}</p>
-      <Link
-        to={to}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-blue)] hover:underline"
-      >
-        {cta} <ArrowRight className="h-4 w-4" />
-      </Link>
+    <article className="overflow-hidden rounded-md border border-[color:var(--color-brand-border)] bg-white">
+      {image && (
+        <img src={image} alt="" loading="lazy" className="aspect-[16/9] w-full object-cover" />
+      )}
+      <div className="p-8">
+        <h3 className="font-serif text-2xl text-[color:var(--color-brand-navy)]">{title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-brand-text-2)]">{body}</p>
+        <Link
+          to={to}
+          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-brand-blue)] hover:underline"
+        >
+          {cta} <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
     </article>
   );
 }
