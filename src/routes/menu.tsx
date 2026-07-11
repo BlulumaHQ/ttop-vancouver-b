@@ -35,7 +35,7 @@ function TagBadge({ t }: { t: string }) {
     t === "Vegetarian"
       ? "bg-emerald-100 text-emerald-800"
       : t === "Spicy"
-        ? "bg-red-100 text-red-800"
+        ? "bg-[color:var(--color-brand-soft-red)] text-[color:var(--color-brand-red)]"
         : "bg-amber-100 text-amber-800";
   return (
     <span
