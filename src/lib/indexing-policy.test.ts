@@ -1,5 +1,13 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import assert from "node:assert/strict";
 import { applyIndexingPolicy, isHostingAlias } from "./indexing-policy";
+
+function expect(actual: unknown) {
+  return {
+    toBe: (expected: unknown) => assert.strictEqual(actual, expected),
+    toBeNull: () => assert.strictEqual(actual, null),
+  };
+}
 
 const html = () => new Response("<html><head></head><body>TTOP</body></html>", {
   headers: { "Content-Type": "text/html; charset=utf-8" },
